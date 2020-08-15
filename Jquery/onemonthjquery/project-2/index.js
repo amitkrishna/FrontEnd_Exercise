@@ -5,4 +5,10 @@ $( "#q1" ).click(function($event) {
     })
   });
 
+ $("#q2").click(function(){
+     $("a2").fadeToggle("slow", function(){
+         console.log("Animate");
+     });
+ }) 
+
   // $() is short-end for jquery()

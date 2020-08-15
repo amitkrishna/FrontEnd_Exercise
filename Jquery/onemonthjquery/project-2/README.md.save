@@ -12,7 +12,15 @@ https://css-tricks.com/dom/
 http://www.w3schools.com/js/js_htmldom.asp
 
 ## Slide Show:
-1. **Add console logging to see what selector returns**
+
+
+
+
+
+## Challenge
+* Create a custom animation using `animate()`
+* Add a 4th question to the FAQ
+* Replace the text of one of the answers with an image or gif1. **Add console logging to see what selector returns**
 index.js
 '''
 $("#q1").click(function() {
@@ -40,12 +48,3 @@ index.js
 $("#q1").click(function() {
  $("#a1").slideToggle("slow");
 })'''
-
-
-
-
-
-## Challenge
-* Create a custom animation using `animate()`
-* Add a 4th question to the FAQ
-* Replace the text of one of the answers with an image or gif

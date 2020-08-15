@@ -12,3 +12,33 @@ localStorage: http://www.w3schools.com/html/html5_webstorage.asp
 * Create a custom animation using `animate()`
 * Add a 4th question to the FAQ
 * Replace the text of one of the answers with an image or gif
+
+## Lessons
+* We will learn to persist data.
+- document is entire webpage.
+'''
+$(document).ready(function () {
+    // YOUR CODE HERE!
+    console.log("Hit");
+});
+'''
+1. Bind submit functionality to add-items selector and add console logging
+index.js
+'''
+$(document).ready(function () {
+ $(".add-items").submit(function() {
+ console.log("HI!";)
+ });
+});
+'''
+2. Prevent default behavior to retain logging information
+index.js
+'''
+$(document).ready(function () {
+ $(".add-items").submit(function(event) {
+ event.preventDefault();
+ console.log("HI!");
+ });
+});
+'''
+

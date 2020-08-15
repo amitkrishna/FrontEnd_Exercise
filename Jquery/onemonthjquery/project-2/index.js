@@ -6,9 +6,9 @@ $( "#q1" ).click(function($event) {
   });
 
  $("#q2").click(function(){
-     $("a2").fadeToggle("slow", function(){
-         console.log("Animate");
-     });
+   $("#a2").slideToggle("slow",function (){
+     console.log("Animate completed");
+ })
  }) 
 
   // $() is short-end for jquery()

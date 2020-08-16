@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // YOUR CODE HERE!
-    $("#list-items").html(localStorage.getItem("listItems"));
+    $("#list-items").html(localStorage.getItem("listItems"));// load any previously stored data item 
     $(".add-items").submit(function ( $event ){
         $event.preventDefault();
         var item = $("#todo-list-item").val();
@@ -21,6 +21,7 @@ $(document).ready(function () {
     $(document).on("click",".remove",function(){// removing in list
        $(this).parent().remove(); 
        console.log($(this).parent());
+//       localStorage.removeItem($(this).)
 
     });
 });

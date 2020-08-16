@@ -18,12 +18,12 @@ $(document).ready(function () {
         console.log("Hello World");
         $(this).attr("checked","checked");
         $(this).parent().toggleClass("completed");
-        localStorage.setItem("listItem", $("#list-items").html());
+        localStorage.setItem("listItems", $("#list-items").html());
     });
     $(document).on("click",".remove",function(){// removing in list
         $(this).attr("checked","checked");
        $(this).parent().remove(); 
-       localStorage.setItem("listItem",$("#list-items").html());
+       localStorage.setItem("listItems",$("#list-items").html());
 
     });
 });

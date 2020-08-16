@@ -16,12 +16,15 @@ $(document).ready(function () {
     });
     $(document).on("change", ".checkbox", function(){// adding list
         console.log("Hello World");
+        $(this).attr("checked","checked");
         $(this).parent().toggleClass("completed");
+        localStorage.setItem("listItem", $("#list-items").html());
     });
     $(document).on("click",".remove",function(){// removing in list
+        $(this).attr("checked","checked");
        $(this).parent().remove(); 
        console.log($(this).parent());
-//       localStorage.removeItem($(this).)
+       localStorage.setItem("listItem",$("#list-items").html());
 
     });
 });

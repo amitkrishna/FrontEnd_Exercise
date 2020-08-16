@@ -237,3 +237,56 @@ $(document).ready(function () {
  $(".add-items").submit(function (event) {
  event.preventDefault();
 '''
+---
+Resources:
+(Manipulation - General Attributes - .attr():)[http://api.jquery.com/attr/]
+(Manipulation - General Attributes - .removeAttr():)[http://api.jquery.com/removeAttr/]
+1. Make removed and checked items persist in Local Storage after page refresh
+index.js
+'''
+$(document).ready(function () {
+ 
+ $("#list-items").html(localStorage.getItem("listItems"));
+
+ $(".add-items").submit(function (event) {
+ event.preventDefault();
+
+ var item = $("#todo-list-item").val();
+
+ if (item) {
+   $("#list-items").append("<li><input class='checkbox' type='checkbox'/>" + item + "<a class='remove'>x</a><hr></li>");
+   localStorage.setItem("listItems", $("#list-items").html());
+   $("#todo-list-item").val("");
+ }
+
+ });
+
+ // $(".checkbox").change(function() {
+ // console.log("Checkbox checked!");
+ // })
+
+ $(document).on("change", ".checkbox", function() {
+   $(this).parent().toggleClass("completed");
+   localStorage.setItem("listItems", $("#list-items").html());
+ });
+
+ $(document).on("click", ".remove", function() {
+   $(this).parent().remove();
+   localStorage.setItem("listItems", $("#list-items").html());
+ });
+
+});'''
+2. Keep checked checkbox checked, and unchecked checkbox unchecked!
+index.js
+'''
+ $(document).on("change", ".checkbox", function() {
+   if ($(this).attr("checked")) {
+     $(this).removeAttr("checked");
+   } else {
+     $(this).attr("checked", "checked");
+   }
+ 
+   $(this).parent().toggleClass("completed");
+   localStorage.setItem("listItems", $("#list-items").html());
+ })
+'''

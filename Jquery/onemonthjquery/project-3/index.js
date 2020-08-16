@@ -6,7 +6,7 @@ $(document).ready(function () {
         console.log($("#todo-list-item").val());
         console.log(typeof(item));
         console.log(typeof(item.val));// undefined
-        if (Boolean(item.val)) {// run only if condition is true
+        if (Boolean(item)) {// run only if condition is true
             console.log(Boolean(item.val));// gets the value of the item
             console.log(typeof(item));
             console.log("Hit");
@@ -14,4 +14,9 @@ $(document).ready(function () {
         $("#todo-list-item").val("");
         }
     });
+    $(document).on("change", ".checkbox", function(){
+        console.log("Hello World");
+        $(this).parent().toggleClass("completed");
+    });
+
 });

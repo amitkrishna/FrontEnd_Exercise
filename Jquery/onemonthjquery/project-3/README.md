@@ -98,4 +98,67 @@ index.js
 
  });
 '''
+## Dynamic Changes
 
+1. Add checkbox class to jQuery file
+index.js
+'''
+$(document).ready(function () {
+ $(".add-items").submit(function (event) {
+ event.preventDefault();
+
+ var item = $("#todo-list-item").val();
+
+ if (item) {
+  $("#list-items").append("<li><input class='checkbox' type='checkbox'/>" + item + "<a class='remove'>x</a><hr></li>");
+  $("#todo-list-item").val("");
+ }
+
+ });
+
+ $(".checkbox")
+
+});'''
+2. Add console logging to see if checkbox has changed
+index.js
+'''
+$(".checkbox").change(function() {
+ console.log("Checkbox checked!");
+ })'''
+3. Comment out unusable code, target the dynamically created checkbox
+index.js
+'''
+ // $(".checkbox").change(function() {
+ // console.log("Checkbox checked!");
+ // })
+
+ $(document).on("change", ".checkbox", function() {
+
+ });
+'''
+## Add completed functionality to check items off the list with the checkbox
+index.js
+'''
+$(document).ready(function () {
+ $(".add-items").submit(function (event) {
+ event.preventDefault();
+
+ var item = $("#todo-list-item").val();
+
+ if (item) {
+  $("#list-items").append("<li><input class='checkbox' type='checkbox'/>" + item + "<a class='remove'>x</a><hr></li>");
+  $("#todo-list-item").val("");
+ }
+
+ });
+
+ // $(".checkbox").change(function() {
+ // console.log("Checkbox checked!");
+ // })
+
+ $(document).on("change", ".checkbox", function() {
+  $(this).parent().toggleClass("completed");
+ });
+
+});
+'''

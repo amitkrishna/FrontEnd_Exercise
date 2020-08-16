@@ -6,6 +6,9 @@ $(document).ready(function () {
         console.log($event);
         var item = $("#todo-list-item").val();
         console.log(item);
+        $("#todo-list-item").val("");
+
+        $("#list-items").append("<li><input type='checkbox'/>" + item + "<a class='remove'>x</a></li>");
     });
 
 });

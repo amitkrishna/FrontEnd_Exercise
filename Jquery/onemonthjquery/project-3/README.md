@@ -58,3 +58,44 @@ index.js
  });'''
 
 ---
+## Insert Here
+[Resource -Manipulation -DOM Insertion](http://api.jquery.com/category/manipulation/dom-insertion-inside/)
+DOM Manipulation is a feature in Jquery.
+1. Add new selector
+index.html
+'''
+<ul id="list-items">
+'''
+2. Append input from item variable into list
+index.js
+'''
+$(document).ready(function () {
+ $(".add-items").submit(function (event) {
+ event.preventDefault();
+
+ var item = $("#todo-list-item").val();
+
+ $("#list-items").append("<li>" + item + "</li>");
+ });
+});
+'''
+3. Add checkbox and x (for later removal of item)
+index.js
+'''
+$("#list-items").append("<li><input type='checkbox'/>" + item + "<a class='remove'>x</a></li>");
+ });'''
+4. Add <hr> for separation styling
+index.js
+'''
+$("#list-items").append("<li><input type='checkbox'/>" + item + "<a class='remove'>x</a><hr></li>");
+ });'''
+5. Clear input field after each new item is added to our list
+index.js
+'''
+ $("#list-items").append("<li><input type='checkbox'/>" + item + "<a class='remove'>x</a><hr></li>");
+
+ $("#todo-list-item").val(""); //  to make the text input null
+
+ });
+'''
+

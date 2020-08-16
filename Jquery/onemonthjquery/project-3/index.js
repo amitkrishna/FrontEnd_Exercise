@@ -18,5 +18,8 @@ $(document).ready(function () {
         console.log("Hello World");
         $(this).parent().toggleClass("completed");
     });
+    $(document).on(("click"),".remove",function(){
+       $(this).parent().remove(); 
+    });
 
 });

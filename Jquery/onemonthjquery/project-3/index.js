@@ -1,5 +1,6 @@
 $(document).ready(function () {
     // YOUR CODE HERE!
+    $("#list-items").html(localStorage.getItem("listItems"));
     $(".add-items").submit(function ( $event ){
         $event.preventDefault();
         var item = $("#todo-list-item").val();
@@ -8,18 +9,18 @@ $(document).ready(function () {
         console.log(typeof(item.val));// undefined
         if (Boolean(item)) {// run only if condition is true
             console.log(Boolean(item.val));// gets the value of the item
-            console.log(typeof(item));
-            console.log("Hit");
         $("#list-items").append("<li><input type='checkbox'/>" + item + "<a class='remove'>x</a></li>");
+        localStorage.setItem("listItems", $("#list-items").html());// get the raw html so that it can be rendered
         $("#todo-list-item").val("");
         }
     });
-    $(document).on("change", ".checkbox", function(){
+    $(document).on("change", ".checkbox", function(){// adding list
         console.log("Hello World");
         $(this).parent().toggleClass("completed");
     });
-    $(document).on(("click"),".remove",function(){
+    $(document).on("click",".remove",function(){// removing in list
        $(this).parent().remove(); 
-    });
+       console.log($(this).parent());
 
+    });
 });

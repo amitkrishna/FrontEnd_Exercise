@@ -192,3 +192,48 @@ $(document).ready(function () {
  });
 
 });'''
+
+## <<--::Web Local Storage::-->>
+Resources:
+(Local Storage API:)[https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API]
+(Local Storage and how to use it on Websites:)[http://www.smashingmagazine.com/2010/10/]local-storage-and-how-to-use-it/
+1. Save list items to Local Storage
+index.js
+'''
+$(document).ready(function () {
+ $(".add-items").submit(function (event) {
+ event.preventDefault();
+
+ var item = $("#todo-list-item").val();
+
+ if (item) {
+   $("#list-items").append("<li><input class='checkbox' type='checkbox'/>" + item + "<a class='remove'>x</a><hr></li>");
+   localStorage.setItem("listItems", $("#list-items").html());
+   $("#todo-list-item").val("");
+ }
+
+ });
+
+ // $(".checkbox").change(function() {
+ // console.log("Checkbox checked!");
+ // })
+
+ $(document).on("change", ".checkbox", function() {
+   $(this).parent().toggleClass("completed");
+ });
+
+ $(document).on("click", ".remove", function() {
+   $(this).parent().remove();
+ });
+
+});'''
+2. Tell page to load any previously-added list items from Local Storage
+index.js
+'''
+$(document).ready(function () {
+ 
+ $("#list-items").html(localStorage.getItem("listItems"));
+
+ $(".add-items").submit(function (event) {
+ event.preventDefault();
+'''

@@ -4,6 +4,8 @@ $(document).ready(function () {
         console.log("Hit");
         $event.preventDefault();
         console.log($event);
+        var item = $("#todo-list-item").val();
+        console.log(item);
     });
 
 });

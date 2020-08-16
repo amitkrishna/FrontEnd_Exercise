@@ -41,4 +41,19 @@ $(document).ready(function () {
  });
 });
 '''
+3. Get Value from input element from html forms
+Making use of val() function in Jquery
+index.js
+'''
+$(document).ready(function () {
+ $(".add-items").submit(function (event) {
+ event.preventDefault();
+
+ console.log($("#todo-list-item").val());
+ });
+});'''
+index.js
+'''
+ var item = $("#todo-list-item").val();
+ });'''
 

@@ -58,7 +58,7 @@ $(document).ready(function () {
       $(this).parent().toggleClass("completed");
       localStorage.setItem("listItems", $("#list-items").html());
     });*/
-    $(document).on("change", ".checkbox", function() {
+    $(document).on("change", ".checkbox", function() {// call back functions
         if ($(this).attr("checked")) {
           $(this).removeAttr("checked");
         } else {
@@ -69,8 +69,12 @@ $(document).ready(function () {
         localStorage.setItem("listItems", $("#list-items").html());
       })
     $(document).on("click", ".remove", function() {
-      $(this).parent().remove();
-      localStorage.setItem("listItems", $("#list-items").html());
+
+    //  $(".checked").slideDown("slow",function(){
+        console.log("Animation");
+        $(this).parent().remove();
+        localStorage.setItem("listItems", $("#list-items").html());
+    //  });
     });
    
    });

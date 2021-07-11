@@ -1,0 +1,38 @@
+{
+	"name": "openui5-sample-app",
+	"version": "0.2.0",
+	"buildTimestamp": "202107091303",
+	"scmRevision": "",
+	"libraries": [
+		{
+			"name": "sap.f",
+			"version": "1.82.0",
+			"buildTimestamp": "202107091303",
+			"scmRevision": ""
+		},
+		{
+			"name": "sap.m",
+			"version": "1.82.0",
+			"buildTimestamp": "202107091303",
+			"scmRevision": ""
+		},
+		{
+			"name": "sap.ui.core",
+			"version": "1.82.0",
+			"buildTimestamp": "202107091303",
+			"scmRevision": ""
+		},
+		{
+			"name": "sap.ui.layout",
+			"version": "1.82.0",
+			"buildTimestamp": "202107091303",
+			"scmRevision": ""
+		},
+		{
+			"name": "sap.ui.unified",
+			"version": "1.82.0",
+			"buildTimestamp": "202107091303",
+			"scmRevision": ""
+		}
+	]
+}

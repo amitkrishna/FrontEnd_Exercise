@@ -14,7 +14,9 @@
 		"build-self-contained": "ui5 build self-contained -a --clean-dest",
 		"serve-dist": "ws --compress -d dist"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"@ui5/server": "^2.3.0"
+	},
 	"devDependencies": {
 		"@ui5/cli": "^2.4.4",
 		"eslint": "^7.9.0",

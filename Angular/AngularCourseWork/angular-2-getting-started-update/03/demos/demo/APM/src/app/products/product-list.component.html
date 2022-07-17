@@ -15,7 +15,7 @@
             <h4>Filtered by: </h4>
         </div>
     </div>
-    <table class="table">
+    <table class="table" *ngIf='products.length'>
         <thead>
           <tr>
             <th>#</th>
@@ -37,3 +37,91 @@
         </tbody>
       </table>
 </div>
+<!--
+<h1>{{pageTitle}}</h1>
+{{'Title: ' + pageTitle }}
+{{ 2 * 20 + 1}}
+<h1 innerText={{pageTitle}}</h1>
+
+  Class:
+  export class AppComponent{
+    pageTitle: string= 'Acme Product Management';
+  }
+
+
+  Directive:
+  
+  Build in Directives:
+  *ngIf : If logic
+  *ngFor : for loop
+
+Browser Module exposes the ngIf and NgFor directives
+
+
+<tbody>
+<tr *ngFor='let product of products'>
+  <td></td>
+  <td> {{ product. productName }}</td>
+  <td> {{ product.productDate }}</td>
+</tr>
+
+ES 2015 for of vs for in loop
+in - Index
+Iterate over the properties of an object.
+Result: 0, 1, 2
+
+
+for iterate over the objects , such as an array.
+Result : di, boo, punkeye
+
+
+
+  -->
+
+
+
+
+  <!--
+    Inline Template :
+
+    For short templates 
+    Specify the template 
+
+    For longer templates : linked Template 
+    
+
+    OneWay binding:
+    - From component class proprty to an element property 
+    
+    Defined with double curly braces 
+    - Contains a template expression
+    - No quotes 
+
+    <td> {{ product.productName }}</td>
+
+    *ngIf and *ngFor 
+
+    <table *ngIf='products'>
+      <tr *ngFor='let product '
+  -->
+
+
+  <!--
+    Data Binding & Pipes:
+
+
+    Component DOM:
+
+
+
+
+
+  -->
+
+  <!--
+    Event Binding:
+
+    <button (click)='toggleImage()'>
+      (click)-> Event
+      taggleImage() -> Method
+  -->

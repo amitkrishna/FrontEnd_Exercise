@@ -8,14 +8,14 @@ import { ProductListComponent } from './products/product-list.component';
 import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
 import { StarComponent } from './shared/star.component';
 
-@NgModule({
+@NgModule({// declaring class which come from these modules
   declarations: [
     AppComponent,
     ProductListComponent,
     ConvertToSpacesPipe,
     StarComponent
   ],
-  imports: [
+  imports: [// pull in external modules
     BrowserModule,
     FormsModule,
     HttpClientModule
@@ -23,3 +23,10 @@ import { StarComponent } from './shared/star.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+/*
+Common Observable useages:
+- start the observable(subscribe)
+-Pipe emmited item though a set of operators
+- Porcess notifications : next , error, complete
+- stop the Observable(unsubscribe)
+*/

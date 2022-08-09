@@ -1,16 +1,26 @@
 import { Component, OnInit } from "@angular/core";
 import { IProduct } from "./product";
+import { DoTiming } from "./doTiming";
 
 @Component({
   selector: 'pm-products',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent implements OnInit, DoTiming {
   pageTitle: string = 'Product List';
   imageWidth: number = 50;
   imageMargin: number = 2;
   showImage: boolean = false;
+  const: number = 0;
+
+  start(index: number): void{
+    // ...
+  }
+
+  stop(): void {
+    // ...
+  }
 
   private _listFilter: string = '';
   get listFilter(): string {
@@ -58,5 +68,12 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
     this.listFilter = 'cart';
+    console.log('In OnInit');
+  }
+  ngOnChanges(): void{
+    // Perform action after change to input properties
+  }
+  ngOnDestroy(): void{
+    // perform destroy
   }
 }

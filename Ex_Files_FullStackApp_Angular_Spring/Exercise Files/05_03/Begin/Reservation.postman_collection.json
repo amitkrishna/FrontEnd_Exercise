@@ -1,0 +1,73 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Reservation",
+		"_postman_id": "769d9fef-d0a1-d181-5e31-5dfd659a7ba1",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get available room reservations",
+			"request": {
+				"url": "http://localhost:8080/room/reservation/v1?checkin=2017-03-18&checkout=2017-03-20",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create room reservation",
+			"request": {
+				"url": "http://localhost:8080/room/reservation/v1",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"roomId\" : 1,\n\t\"checkin\" : \"2017-03-01\",\n\t\"checkout\" : \"2017-03-05\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update room reservation",
+			"request": {
+				"url": "http://localhost:8080/room/reservation/v1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"roomId\" : 1,\n\t\"checkin\" : \"2017-03-01\",\n\t\"checkout\" : \"2017-03-05\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete room reservation",
+			"request": {
+				"url": "http://localhost:8080/room/reservation/v1/12345",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
